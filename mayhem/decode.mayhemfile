@@ -1,0 +1,6 @@
+project: rawloader
+target: decode
+
+cmds:
+  - cmd: /rawloader/fuzz/target/debug/fuzz-rawloader-decoders
+    afl: true

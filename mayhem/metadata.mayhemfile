@@ -1,0 +1,6 @@
+project: rawloader
+target: loadmetadata
+
+cmds:
+  - cmd: /rawloader/fuzz/target/debug/fuzz-rawloader-metadata
+    afl: true
