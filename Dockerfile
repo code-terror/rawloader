@@ -13,5 +13,5 @@ RUN ${HOME}/.cargo/bin/cargo afl build
 WORKDIR /rawloader/fuzz/in
 RUN echo ' ' >> one.txt
 WORKDIR /
-#ENTRYPOINT ["cargo", "afl", "fuzz", "-i", "/rawloader/fuzz/in", "-o", "/rawloader/fuzz/out"]
+ENTRYPOINT ["cargo", "afl", "fuzz", "-i", "/rawloader/fuzz/in", "-o", "/rawloader/fuzz/out"]
 #CMD ["/rawloader/fuzz/target/debug/fuzz-rawloader-decoders"]
