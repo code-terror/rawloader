@@ -5,4 +5,4 @@ cmds:
   - cmd: /fuzz-rawloader-decoders
     afl: true
 testsuite:
-  - file:/in/one.txt
+  - file:/in
