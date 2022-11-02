@@ -21,6 +21,6 @@ FROM ubuntu:20.04
 COPY --from=builder /rawloader/fuzz/target/debug/ /
 WORKDIR /in
 RUN echo ' ' >> one.txt
-WORKDIR /in
+WORKDIR /
 #ENTRYPOINT ["cargo", "afl", "fuzz", "-i", "/in", "-o", "/out"]
 #CMD ["/target/debug/fuzz"]
