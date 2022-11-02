@@ -10,8 +10,16 @@ RUN ${HOME}/.cargo/bin/cargo install afl
 COPY . /rawloader
 WORKDIR /rawloader/fuzz/
 RUN ${HOME}/.cargo/bin/cargo afl build
-WORKDIR /rawloader/fuzz/in
-RUN echo ' ' >> one.txt
+#WORKDIR /rawloader/fuzz/in
+#RUN echo ' ' >> one.txt
 WORKDIR /rawloader/fuzz
-ENTRYPOINT ["${HOME}/.cargo/bin/cargo", "afl", "fuzz", "-i", "/rawloader/fuzz/in", "-o", "/rawloader/fuzz/out"]
+#ENTRYPOINT ["cargo", "afl", "fuzz", "-i", "/rawloader/fuzz/in", "-o", "/rawloader/fuzz/out"]
 #CMD ["/rawloader/fuzz/target/debug/fuzz-rawloader-decoders"]
+
+# Package Stage
+FROM ubuntu:20.04
+COPY --from=builder /rawloader/fuzz/target/debug/ /
+WORKDIR /in
+RUN echo ' ' >> one.txt
+#ENTRYPOINT ["cargo", "afl", "fuzz", "-i", "/in", "-o", "/out"]
+#CMD ["/target/debug/fuzz"]

@@ -2,7 +2,7 @@ project: rawloader
 target: decode
 
 cmds:
-  - cmd: /rawloader/fuzz/target/debug/fuzz-rawloader-decoders
+  - cmd: /fuzz-rawloader-decoders
     afl: true
 testsuite:
-  - file:///rawloader/fuzz/in
+  - file:/in/one.txt

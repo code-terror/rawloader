@@ -2,7 +2,5 @@ project: rawloader
 target: loadmetadata
 
 cmds:
-  - cmd: /rawloader/fuzz/target/debug/fuzz-rawloader-metadata
+  - cmd: /fuzz-rawloader-metadata
     afl: true
-testsuite:
-  - file:///rawloader/fuzz/in
