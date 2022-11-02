@@ -4,5 +4,3 @@ target: decode
 cmds:
   - cmd: /fuzz-rawloader-decoders
     afl: true
-testsuite:
-  - file:/in
